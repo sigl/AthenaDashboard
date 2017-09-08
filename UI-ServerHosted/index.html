@@ -1,0 +1,616 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Athena Status Overview</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+        <link rel="stylesheet" href="assets/css/loader.css" />
+    </head>
+    <body oncontextmenu="return false;">
+
+        <!-- Topbar -->
+            <div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <span class="navbar-brand brand-centered"><b>Athena NX</b> Status Overview</span>
+                    </div>
+                </div>
+            </div>
+        <!-- End Topbar -->
+        <!-- Body -->
+            <div class="container-fluid container-body" style="margin-top:80px;">
+                <!-- Homepage view -->
+                <div class="viewPage" id="view_home">
+
+                    <div class="row">
+
+                        <div class="col-md-3 text-center">
+                            <h1 id="wt_clock_display" class="hClock">-- CLK ERR --</h1>
+                            <h4 id="wt_clock_date" class="text-muted"> -- DATE ERR -- </h4>
+                            <small style="margin-top:25px;" class="text-muted"><i class="fa fa-clock-o"></i>&nbsp; US Western Time</small>
+                        </div>
+
+                        <div class="col-md-3 text-center">
+                            <h1 id="et_clock_display" class="hClock">-- CLK ERR --</h1>
+                            <h4 id="et_clock_date" class="text-muted"> -- DATE ERR -- </h4>
+                            <small style="margin-top:25px;" class="text-muted"><i class="fa fa-clock-o"></i>&nbsp; US Eastern Time</small>
+                        </div>
+
+                        <div class="col-md-3 text-center">
+                            <h1 id="ict_clock_display" class="hClock">-- CLK ERR --</h1>
+                            <h4 id="ict_clock_date" class="text-muted"> -- DATE ERR -- </h4>
+                            <small style="margin-top:25px;" class="text-muted"><i class="fa fa-clock-o"></i>&nbsp; Indochina Time</small>
+                        </div>
+
+                        <div class="col-md-3 text-center">
+                            <h1 id="jst_clock_display" class="hClock">-- CLK ERR --</h1>
+                            <h4 id="jst_clock_date" class="text-muted"> -- DATE ERR -- </h4>
+                            <small style="margin-top:25px;" class="text-muted"><i class="fa fa-clock-o"></i>&nbsp; Japan Standard Time</small>
+                        </div>
+                    </div>
+
+                    <br /><br />
+
+                    <div class="row">
+                        <div class="col-sm-6 text-center">
+                            <div class="well">
+                                <h5 style="margin-top:0px;"><i class="fa fa-leaf"></i> Environmental</h5><br />
+                                <div class="row text-center vertical-divider">
+                                    <div class="col-xs-3">
+                                        <h2 class="text-medium"><span id="dsp_ha_exttemp">-</span> <small>°C</small></h2>
+                                        <small class="text-muted"><i class="fa fa-thermometer"></i>&nbsp; Exterior temperature</small>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <h2 class="text-medium"><span id="dsp_ha_exthum">-</span> <small>%</small></h2>
+                                        <small class="text-muted"><i class="fa fa-leaf"></i>&nbsp; Exterior humidity</small>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <h2 class="text-medium"><span id="dsp_ha_windspd">-</span> <small>km/h</small></h2>
+                                        <small class="text-muted"><i class="fa fa-tachometer"></i>&nbsp; Current wind speed</small>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <h2 class="text-medium"><span id="dsp_ha_baro">-</span> <small>kPa</small></h2>
+                                        <small class="text-muted"><i class="fa fa-cloud-download"></i>&nbsp; Barometric pressure</small>
+                                    </div>
+                                </div>
+                                <!-- *************** --> <br />
+                                <div class="row text-center vertical-divider">
+                                    <div class="col-xs-3">
+                                        <h2 class="text-medium"><span id="dsp_ha_pm25">-</span> <small>μg/m<sup>3</sup></small></h2>
+                                        <small class="text-muted"><i class="fa fa-leaf"></i>&nbsp; PM2.5 level</small>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <h2 class="text-medium"><span id="dsp_ha_no2">-</span> <small>μg/m<sup>3</sup></small></h2>
+                                        <small class="text-muted"><i class="fa fa-leaf"></i>&nbsp; NO<sub>2</sub> level</small>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <h2 class="text-medium"><span id="dsp_ha_o3">-</span> <small>μg/m<sup>3</sup></small></h2>
+                                        <small class="text-muted"><i class="fa fa-leaf"></i>&nbsp; O<sup>3</sup> level</small>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <h2 class="text-medium"><span id="dsp_ha_nrstorm">-</span> <small>km</small></h2>
+                                        <small class="text-muted"><i class="fa fa-bolt"></i>&nbsp; Nearest storm distance</small>
+                                    </div>
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <!-- =========================================== -->
+                        <div class="col-sm-6 text-center">
+                            <div class="well">
+                                <h5 style="margin-top:0px;"><i class="fa fa-server"></i> Network &amp; Computing</h5><br />
+                                <div class="row text-center vertical-divider">
+                                    <div class="col-xs-3">
+                                        <h2 class="text-medium"><span id="dsp_ha_cs_energy">-</span> <small>watts</small></h2>
+                                        <small class="text-muted"><i class="fa fa-bolt"></i>&nbsp; Core server energy usage</small>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <h2 class="text-medium"><span id="dsp_ha_cs_fan">-</span> <small>%</small></h2>
+                                        <small class="text-muted"><i class="fa fa-tachometer"></i>&nbsp; Core server fan speed</small>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <h2 class="text-medium"><span id="dsp_ha_cs_itemp">-</span> <small>°C</small></h2>
+                                        <small class="text-muted"><i class="fa fa-thermometer"></i>&nbsp; Core server inlet temp</small>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <h2 class="text-medium"><span id="dsp_ha_cs_ctemp">-</span> <small>°C</small></h2>
+                                        <small class="text-muted"><i class="fa fa-thermometer"></i>&nbsp; Core server CPU temp</small>
+                                    </div>
+                                </div>
+                                <!-- *************** --> <br />
+                                <div class="row text-center vertical-divider">
+                                    <div class="col-xs-3">
+                                        <h2 class="text-medium"><span id="dsp_live_gw_downlink">-</span> <small>mb/s</small></h2>
+                                        <small class="text-muted"><i class="fa fa-download"></i>&nbsp; External downlink traffic</small>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <h2 class="text-medium"><span id="dsp_live_gw_uplink">-</span> <small>mb/s</small></h2>
+                                        <small class="text-muted"><i class="fa fa-upload"></i>&nbsp; External uplink traffic</small>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <h2 class="text-medium"><span id="dsp_prtg_network_ping">-</span> <small>ms</small></h2>
+                                        <small class="text-muted"><i class="fa fa-globe"></i>&nbsp; Network ping</small>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <h2 class="text-medium"><span id="dsp_prtg_network_jitter">-</span> <small>ms</small></h2>
+                                        <small class="text-muted"><i class="fa fa-globe"></i>&nbsp; Network jitter</small>
+                                    </div>
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 00000000000000000000000000000000 -->
+
+                    <div class="row text-center">
+                        <div class="col-md-5">
+                            <!-- *** -->
+                            <div class="well">
+                                <h5 style="margin-top:0px;"><i class="fa fa-lightbulb-o"></i> Lights</h5><br />
+                                <div class="row text-center">
+                                    <div class="col-xs-2">
+                                        <i id="at_bulb_bedroom1_icon" class="fa fa-lightbulb-o fa-4x"></i>
+                                        <small class="at_lightbulb_descriptor">Ceiling 1<br /><span id="at_bulb_bedroom1_descr"></span></small>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <i id="at_bulb_bedroom2_icon" class="fa fa-lightbulb-o fa-4x"></i>
+                                        <small class="at_lightbulb_descriptor">Ceiling 2<br /><span id="at_bulb_bedroom2_descr"></span></small>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <i id="at_bulb_bathroom1_icon" class="fa fa-lightbulb-o fa-4x"></i>
+                                        <small class="at_lightbulb_descriptor">Bathroom 1<br /><span id="at_bulb_bathroom1_descr"></span></small>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <i id="at_bulb_bathroom2_icon" class="fa fa-lightbulb-o fa-4x"></i>
+                                        <small class="at_lightbulb_descriptor">Bathroom 2<br /><span id="at_bulb_bathroom2_descr"></span></small>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <i id="at_bulb_bathroom3_icon" class="fa fa-lightbulb-o fa-4x"></i>
+                                        <small class="at_lightbulb_descriptor">Bathroom 3<br /><span id="at_bulb_bathroom3_descr"></span></small>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <i id="at_bulb_floorlamp_icon" class="fa fa-lightbulb-o fa-4x"></i>
+                                        <small class="at_lightbulb_descriptor">Floor Lamp<br /><span id="at_bulb_floorlamp_descr"></span></small>
+                                    </div>
+                                </div>
+                                <br />
+                            </div>
+                            <!-- === -->
+                            <div class="well">
+                                <h5 style="margin-top:0px;"><i class="fa fa-cloud"></i> Weather <span>( <b id="dsp_ha_darksky_summary">-</b> )</span></h5><br />
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <i class="fa fa-sun-o"></i> Sunrise: <span id="dsp_sunrise_time"></span>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <i class="fa fa-moon-o"></i> Sunset: <span id="dsp_sunset_time"></span>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <i class="fa fa-compass"></i> Sun azimuth: <span id="dep_sun_azimuth"></span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <i class="fa fa-sun-o text-muted"></i> Dawn: <span id="dsp_dawn_time"></span>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <i class="fa fa-moon-o text-muted"></i> Dusk: <span id="dsp_dusk_time"></span>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <i class="fa fa-compass"></i> Sun elevation: <span id="dep_sun_elevation"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="well">
+                                <h5 style="margin-top:0px;"><i class="fa fa-sitemap"></i> Primary Network Clients</h5><br />
+                                <!-- *** -->
+                                <table class="table table-striped" style="font-size:.8em;">
+                                    <thead>
+                                        <tr>
+                                            <td><small>Hostname</small></td>
+                                            <td><small>IP address</small></td>
+                                            <td><small>MAC address</small></td>
+                                            <td><small>Last seen</small></td>
+                                            <td><small>Lease expires</small></td>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tb_d_activeNetworkClients">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="well">
+                                <h5 style="margin-top:0px;"><i class="fa fa-users"></i> Guest Network Clients</h5><br />
+                                <!-- *** -->
+                                <table class="table table-striped" style="font-size:.8em;">
+                                    <thead>
+                                        <tr>
+                                            <td><small>Hostname</small></td>
+                                            <td><small>IP address</small></td>
+                                            <td><small>MAC address</small></td>
+                                            <td><small>Lease expires</small></td>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tb_d_guestNetworkClients">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- =================== -->
+                </div>
+                <!-- End homepage view -->
+            </div>
+        <!-- End Body -->
+
+
+        <script src="assets/js/jquery-3.1.1.js"></script>
+        <script src="assets/js/bootstrap.js"></script>
+        <script src="assets/js/moment.js"></script>
+        <script src="assets/js/moment-timezone.js"></script>
+        <script>
+
+        /* API endpoints! */
+
+        // These two are for PRTG network monitor (which I use to get ping & jitter values)
+        var prtg_endpoint = "https://prtg.homelab";
+        var prtg_authstring = "&username=[prtg_readonly_username]&passhash=[prtg_pass_hash]";
+
+        // Home assistant API endpoint
+        var athena_core_endpoint = "https://athena-core.homelab";
+
+        // MikroTik API endpoints (uses PHP middleware script - see /MikrotikMiddleware)
+        var lucio_dhcp_api_endpoint = "https://athena-core.homelab:4444/dhcp_clients.php";
+        var lucio_interfaces_api_endpoint = "https://athena-core.homelab:4444/interfaces.php";
+
+        /* DHCP server names from MikroTik API to sort the display columns */
+        var primary_dhcp_filter = "client-vlan-dhcp";
+        var guest_dhcp_filter = "guest-vlan-dhcp";
+
+        /* Mostly internal data */
+        var haData = {};
+        var prtgGWdata = {};
+        var prtgInternetData = {};
+        var networkClients = {};
+        var lucioInterfaceStats = {};
+
+        var gwLastTxBytes = -1;
+        var gwLastRxBytes = -1;
+
+        $(function(){
+            getClock();
+            getHAdata();
+            getPrtgInternetData();
+            getDHCPleaseData();
+            getLiveGatewayTrafficData();
+        });
+
+        function getClock(){
+
+            // TimeNow
+            timeNow = new Date();
+
+            // Eastern Time Clock
+            $("#et_clock_display").html(moment.tz(timeNow, "America/New_York").format("HH:mm:ss"));
+            $("#et_clock_date").html(moment.tz(timeNow, "America/New_York").format("dddd, Do MMMM YYYY"));
+
+            // Western Time Clock
+            $("#wt_clock_display").html(moment.tz(timeNow, "America/Los_Angeles").format("HH:mm:ss"));
+            $("#wt_clock_date").html(moment.tz(timeNow, "America/Los_Angeles").format("dddd, Do MMMM YYYY"));
+
+            // Indochina Time Clock
+            $("#ict_clock_display").html(moment.tz(timeNow, "Asia/Bangkok").format("HH:mm:ss"));
+            $("#ict_clock_date").html(moment.tz(timeNow, "Asia/Bangkok").format("dddd, Do MMMM YYYY"));
+
+            // Japan Standard Time Clock
+            $("#jst_clock_display").html(moment.tz(timeNow, "Asia/Tokyo").format("HH:mm:ss"));
+            $("#jst_clock_date").html(moment.tz(timeNow, "Asia/Tokyo").format("dddd, Do MMMM YYYY"));
+
+            // Set reload
+            setTimeout("getClock()", 1000);
+        }
+
+        function getHAdata(){
+            $.ajax({
+                url: athena_core_endpoint + "/api/states",
+                error: function (request, status, error) {
+                    console.log("[ERROR!] " + error);
+                },
+                dataType: "json",
+                success: function(data) {
+                    $.each(data, function(index, node){
+                        haData[node.entity_id] = node;
+                    });
+                    updateHAdisplayData();
+                },
+                type: "GET"
+            });
+            setTimeout("getHAdata()", 1000);
+        }
+
+        function getPrtgInternetData(){
+            $.ajax({
+                url: prtg_endpoint + "/api/table.json?content=sensors&output=json&columns=objid,sensor,lastvalue&id=[prtg_internet_sensor_id]&noraw=1&usecaption=true" + prtg_authstring,
+                error: function (request, status, error) {
+                    console.log("[ERROR!] " + error);
+                },
+                dataType: "json",
+                success: function(data) {
+                    $.each(data.sensors, function(index, node){
+                        prtgInternetData[node.sensor] = node;
+                    });
+                    updatePRTGInternetData();
+                },
+                type: "GET"
+            });
+            setTimeout("getPrtgInternetData()", 1000);
+        }
+
+        function getDHCPleaseData(){
+            $.ajax({
+                url: lucio_dhcp_api_endpoint,
+                error: function (request, status, error) {
+                    console.log("[ERROR!] " + error);
+                },
+                dataType: "json",
+                success: function(data) {
+                    $.each(data, function(index, node){
+                        networkClients[node[".id"]] = node;
+                    });
+                    updateDHCPtable();
+                },
+                type: "GET"
+            });
+            setTimeout("getDHCPleaseData()", 1000);
+        }
+
+        function getLiveGatewayTrafficData(){
+            $.ajax({
+                url: lucio_interfaces_api_endpoint,
+                error: function (request, status, error) {
+                    console.log("[ERROR!] " + error);
+                },
+                dataType: "json",
+                success: function(data) {
+                    $.each(data, function(index, node){
+                        lucioInterfaceStats[node["name"]] = node;
+                    });
+                    updateLiveGatewayTrafficData();
+                },
+                type: "GET"
+            });
+            setTimeout("getLiveGatewayTrafficData()", 1000);
+        }
+
+        // Update DHCP lease display table
+        function updateDHCPtable(){
+
+            $("#tb_d_activeNetworkClients").empty();
+            $("#tb_d_guestNetworkClients").empty();
+
+            $.each(networkClients, function(i, client){
+
+                if(client["status"] == "bound"){
+                    if(client["last-seen"].indexOf("m") > -1){
+                        var lastSeenString = parseInt(client["last-seen"]) + " min";
+                    }else{
+                        var lastSeenString = "<1 min";
+                    }
+                    if(client["expires-after"].indexOf("m") > -1){
+                        var leaseExpiresString = parseInt(client["expires-after"]) + " min";
+                    }else{
+                        var leaseExpiresString = "<1 min";
+                    }
+
+                    if(client.server == primary_dhcp_filter){
+                        $("#tb_d_activeNetworkClients").append("<tr><td>" + client["host-name"] + "</td><td>" + client["address"] + "</td><td>" + client["mac-address"] + "</td><td>" + lastSeenString + "</td><td>" + leaseExpiresString + "</td></tr>");
+                    }
+
+                    if(client.server == guest_dhcp_filter){
+                        $("#tb_d_guestNetworkClients").append("<tr><td>" + client["host-name"] + "</td><td>" + client["address"] + "</td><td>" + client["mac-address"] + "</td><td>" + leaseExpiresString + "</td></tr>");
+                    }
+                }
+
+            });
+        }
+
+        function updateLiveGatewayTrafficData(){
+
+            // NOTE: Replace "ether1-uplink" with your own WAN interface name here!
+            if(gwLastTxBytes == -1){
+                // First TX, no calc
+                gwLastTxBytes = parseInt(lucioInterfaceStats["ether1-uplink"]["tx-byte"], 10);
+            }else{
+                // Calculate TX bytes as usual
+                var gwBps = parseInt(lucioInterfaceStats["ether1-uplink"]["tx-byte"], 10) - gwLastTxBytes;
+                gwLastTxBytes = parseInt(lucioInterfaceStats["ether1-uplink"]["tx-byte"], 10);
+                // Convert bytes to bits
+                var gwTxMbps = parseFloat(((gwBps * 8) / 1000000)).toFixed(2);
+                $("#dsp_live_gw_uplink").html(gwTxMbps);
+            }
+
+            if(gwLastRxBytes == -1){
+                // First RX, no calc
+                gwLastRxBytes = parseInt(lucioInterfaceStats["ether1-uplink"]["rx-byte"], 10);
+            }else{
+                // Calculate RX bytes as usual
+                var gwRBps = parseInt(lucioInterfaceStats["ether1-uplink"]["rx-byte"], 10) - gwLastRxBytes;
+                gwLastRxBytes = parseInt(lucioInterfaceStats["ether1-uplink"]["rx-byte"], 10);
+                // Convert bytes to bits
+                var gwRxMbps = parseFloat(((gwRBps * 8) / 1000000)).toFixed(2);
+                $("#dsp_live_gw_downlink").html(gwRxMbps);
+            }
+
+        }
+
+
+        function updateHAdisplayData(){
+            // Weather data (darksky plugin data from HA)
+            $("#dsp_ha_exttemp").html(haData["sensor.dark_sky_temperature"].state);
+            $("#dsp_ha_exthum").html(haData["sensor.dark_sky_humidity"].state);
+            $("#dsp_ha_windspd").html((parseFloat(haData["sensor.dark_sky_wind_speed"].state) * 3.6).toFixed(2));
+            $("#dsp_ha_baro").html((parseFloat(haData["sensor.dark_sky_pressure"].state) * 0.1).toFixed(2));
+            $("#dsp_ha_nrstorm").html(haData["sensor.dark_sky_nearest_storm_distance"].state);
+
+            // Pollution data
+            $("#dsp_ha_pm25").html(haData["sensor.[waqi_your_area_identifier]"].attributes.pm_2_5);
+            $("#dsp_ha_no2").html(haData["sensor.[waqi_your_area_identifier]"].attributes.nitrogen_dioxide);
+            $("#dsp_ha_o3").html(haData["sensor.[waqi_your_area_identifier]"].attributes.ozone);
+
+            // Pollution colors
+            if(parseFloat(haData["sensor.[waqi_your_area_identifier]"].attributes.pm_2_5, 10) > 55.50){ // PM2.5
+                $("#dsp_ha_pm25").removeClass("text-success").addClass("text-warning");
+            }else{
+                $("#dsp_ha_pm25").removeClass("text-warning").addClass("text-success");
+            }
+            if((((parseFloat(haData["sensor.[waqi_your_area_identifier]"].attributes.ozone) * 24.45) / 48) / 1000) > 0.07){ // Ozone (uses ppm as unit to check)
+                $("#dsp_ha_o3").removeClass("text-success").addClass("text-warning");
+            }else{
+                $("#dsp_ha_o3").removeClass("text-warning").addClass("text-success");
+            }
+
+            // Storm distance colors
+            if(parseFloat(haData["sensor.dark_sky_nearest_storm_distance"].state, 10) < 7){
+                $("#dsp_ha_nrstorm").removeClass("text-success").addClass("text-warning");
+            }else{
+                $("#dsp_ha_nrstorm").removeClass("text-warning").addClass("text-success");
+            }
+
+            // Winston (core server) iLO data
+            $("#dsp_ha_cs_energy").html(haData["sensor.hp_ilo_power"].state);
+            $("#dsp_ha_cs_fan").html(haData["sensor.hp_ilo_fan_speed"].state);
+            $("#dsp_ha_cs_itemp").html(haData["sensor.hp_ilo_inlet_temperature"].state);
+            $("#dsp_ha_cs_ctemp").html(haData["sensor.hp_ilo_cpu_temperature"].state);
+
+            // Darksky summary
+            $("#dsp_ha_darksky_summary").html(haData["sensor.dark_sky_summary"].state);
+
+            // Sunrise, sunset, azimuth & elevation
+            $("#dsp_sunrise_time").html(moment(haData["sun.sun"].attributes.next_rising).format("HH:mm:ss"));
+            $("#dsp_sunset_time").html(moment(haData["sun.sun"].attributes.next_setting).format("HH:mm:ss"));
+            $("#dsp_dawn_time").html(moment(haData["sun.sun"].attributes.next_dawn).format("HH:mm:ss"));
+            $("#dsp_dusk_time").html(moment(haData["sun.sun"].attributes.next_dusk).format("HH:mm:ss"));
+            $("#dep_sun_azimuth").html(haData["sun.sun"].attributes.azimuth + "°");
+            $("#dep_sun_elevation").html(haData["sun.sun"].attributes.elevation + "°");
+
+            // Lighting status displays
+            // For some weird reason, the Philips Hue bulbs' brightness maxes out at 254.
+            // TODO: (deduplication) create a single function to calculate brightness of these lights in a 0-100 scale
+
+            switch(haData["light.ceiling_bulb_1"].state){
+                case "on":
+                    $("#at_bulb_bedroom1_icon").removeClass("text-muted");
+                    $("#at_bulb_bedroom1_descr").html("<label class=\"label label-success\">" + ( (100 * parseFloat(haData["light.ceiling_bulb_1"].attributes.brightness)) / 254 ).toFixed(0) + " %</label>");
+                break;
+                case "off":
+                    $("#at_bulb_bedroom1_icon").addClass("text-muted");
+                    $("#at_bulb_bedroom1_descr").html("<label class=\"label label-danger\">Off</label>");
+                break;
+                default:
+                    $("#at_bulb_bedroom1_icon").addClass("text-muted");
+                    $("#at_bulb_bedroom1_descr").html("<label class=\"label label-info\">?</label>");
+            }
+
+            switch(haData["light.ceiling_bulb_2"].state){
+                case "on":
+                    $("#at_bulb_bedroom2_icon").removeClass("text-muted");
+                    $("#at_bulb_bedroom2_descr").html("<label class=\"label label-success\">" + ( (100 * parseFloat(haData["light.ceiling_bulb_2"].attributes.brightness)) / 254 ).toFixed(0) + " %</label>");
+                break;
+                case "off":
+                    $("#at_bulb_bedroom2_icon").addClass("text-muted");
+                    $("#at_bulb_bedroom2_descr").html("<label class=\"label label-danger\">Off</label>");
+                break;
+                default:
+                    $("#at_bulb_bedroom2_icon").addClass("text-muted");
+                    $("#at_bulb_bedroom2_descr").html("<label class=\"label label-info\">?</label>");
+            }
+
+            switch(haData["light.bathroom_bulb_1"].state){
+                case "on":
+                    $("#at_bulb_bathroom1_icon").removeClass("text-muted");
+                    $("#at_bulb_bathroom1_descr").html("<label class=\"label label-success\">" + ( (100 * parseFloat(haData["light.bathroom_bulb_1"].attributes.brightness)) / 254 ).toFixed(0) + " %</label>");
+                break;
+                case "off":
+                    $("#at_bulb_bathroom1_icon").addClass("text-muted");
+                    $("#at_bulb_bathroom1_descr").html("<label class=\"label label-danger\">Off</label>");
+                break;
+                default:
+                    $("#at_bulb_bathroom1_icon").addClass("text-muted");
+                    $("#at_bulb_bathroom1_descr").html("<label class=\"label label-info\">?</label>");
+            }
+
+            switch(haData["light.bathroom_bulb_2"].state){
+                case "on":
+                    $("#at_bulb_bathroom2_icon").removeClass("text-muted");
+                    $("#at_bulb_bathroom2_descr").html("<label class=\"label label-success\">" + ( (100 * parseFloat(haData["light.bathroom_bulb_2"].attributes.brightness)) / 254 ).toFixed(0) + " %</label>");
+                break;
+                case "off":
+                    $("#at_bulb_bathroom2_icon").addClass("text-muted");
+                    $("#at_bulb_bathroom2_descr").html("<label class=\"label label-danger\">Off</label>");
+                break;
+                default:
+                    $("#at_bulb_bathroom2_icon").addClass("text-muted");
+                    $("#at_bulb_bathroom2_descr").html("<label class=\"label label-info\">?</label>");
+            }
+
+            switch(haData["light.bathroom_bulb_3"].state){
+                case "on":
+                    $("#at_bulb_bathroom3_icon").removeClass("text-muted");
+                    $("#at_bulb_bathroom3_descr").html("<label class=\"label label-success\">" + ( (100 * parseFloat(haData["light.bathroom_bulb_3"].attributes.brightness)) / 254 ).toFixed(0) + " %</label>");
+                break;
+                case "off":
+                    $("#at_bulb_bathroom3_icon").addClass("text-muted");
+                    $("#at_bulb_bathroom3_descr").html("<label class=\"label label-danger\">Off</label>");
+                break;
+                default:
+                    $("#at_bulb_bathroom3_icon").addClass("text-muted");
+                    $("#at_bulb_bathroom3_descr").html("<label class=\"label label-info\">?</label>");
+            }
+
+            switch(haData["light.floor_lamp"].state){
+                case "on":
+                    $("#at_bulb_floorlamp_icon").removeClass("text-muted");
+                    $("#at_bulb_floorlamp_descr").html("<label class=\"label label-success\">" + ( (100 * parseFloat(haData["light.floor_lamp"].attributes.brightness)) / 254 ).toFixed(0) + " %</label>");
+                break;
+                case "off":
+                    $("#at_bulb_floorlamp_icon").addClass("text-muted");
+                    $("#at_bulb_floorlamp_descr").html("<label class=\"label label-danger\">Off</label>");
+                break;
+                default:
+                    $("#at_bulb_floorlamp_icon").addClass("text-muted");
+                    $("#at_bulb_floorlamp_descr").html("<label class=\"label label-info\">?</label>");
+            }
+
+
+        }
+
+        function updatePRTGInternetData(){
+            $("#dsp_prtg_network_ping").html(parseFloat(prtgInternetData["Ping"].lastvalue, 10));
+            $("#dsp_prtg_network_jitter").html(parseFloat(prtgInternetData["Jitter"].lastvalue, 10));
+
+            if(parseFloat(prtgInternetData["Ping"].lastvalue, 10) > 45){ // Ping
+                $("#dsp_prtg_network_ping").addClass("text-warning");
+            }else{
+                $("#dsp_prtg_network_ping").removeClass("text-warning");
+            }
+
+            if(parseFloat(prtgInternetData["Jitter"].lastvalue, 10) > 4){ // Jitter
+                $("#dsp_prtg_network_jitter").addClass("text-warning");
+            }else{
+                $("#dsp_prtg_network_jitter").removeClass("text-warning");
+            }
+        }
+
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,7 @@
+/* Fonts */
+@import url("../fonts/montserrat/montserrat.css");
+@import url("../fonts/fontawesome/fontawesome.css");
+
+/* Main CSS */
+@import url("./main.css");
+@import url("./extras.css");

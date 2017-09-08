@@ -1,0 +1,14 @@
+{
+  "name": "athena-dashboard-display",
+  "version": "1.0.0",
+  "description": "Athena's dashboard display app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "NamoDev",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "~1.6.2"
+  }
+}
