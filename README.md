@@ -1,5 +1,5 @@
 # AthenaDashboard
-The quick and dirty implementation of a dashboard for my homelab. Code quality is certainly not ideal (this entire thing was completed in under two hours), and most components are hardcoded, but feel free to poke around to see how it works!
+The quick and dirty implementation of a dashboard for my homelab. Code quality is certainly not ideal (this entire thing was completed in under two hours), best practices are NOT followed in this project and most components are hardcoded, but feel free to poke around to see how it works!
 
 ## Quick tips!
 * The `UI-ServerHosted` directory contains the code for the actual dashboard itself. This should be hosted on a local server somewhere.
